@@ -8,8 +8,13 @@ function hitungLuasPersegiPanjang(panjang, lebar) {
   // TODO:
   // - validasi: panjang dan lebar harus number
 
-  if(typeof panjang != "number" || typeof lebar !="number"){ throw new Error ("Panjang atau lebar haruslah angka" )};
-  if(panjang < 0 & lebar < 0){throw new Error ("Panjang dan lebar tidak boleh negatif")};
+  if(typeof panjang !== "number" || typeof lebar !=="number"){
+    throw new Error ("Panjang atau lebar haruslah angka");
+    }
+
+  if(panjang < 0 || lebar < 0){
+    throw new Error ("Panjang dan lebar tidak boleh negatif");
+    }
 
   return panjang * lebar;
 
@@ -23,8 +28,15 @@ function isGenap(n) {
   // TODO:
   // - validasi: n harus number
 
-  if(typeof n != "number"){ throw new Error ('n harus berupa angka')}
-  if((n & 1)=== 0){ return true}else{return false}
+  if(typeof n != "number"){
+    throw new Error ('n harus berupa angka');
+    }
+
+  if(n & 2 === 0){
+    return true;
+    }else{
+    return false;
+    }
   // - return true jika genap, false jika ganjil
 }
 
