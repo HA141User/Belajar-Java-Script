@@ -1,35 +1,51 @@
 "use strict";
 
+// Minggu 1 - Hari 1
+// Fokus: function, kondisi (if), array, loop, basic error handling
+
 // 1) hitungLuasPersegiPanjang(panjang, lebar)
 function hitungLuasPersegiPanjang(panjang, lebar) {
-  // TODO: validasi: harus number dan >= 0
-  
-  if(typeof panjang == "number" && typeof lebar =="number" && panjang >= 0 && lebar >=0){
-    return panjang*lebar
-  }else{
-    throw new Error("Panjang dan lebar harus berupa angka dan tidak negatif")
-    
-  }
-  // TODO: return panjang * lebar
+  // TODO:
+  // - validasi: panjang dan lebar harus number
+
+  if(typeof panjang != "number" || typeof lebar !="number"){ throw new Error ("Panjang atau lebar haruslah angka" )};
+  if(panjang < 0 & lebar < 0){throw new Error ("Panjang dan lebar tidak boleh negatif")};
+
+  return panjang * lebar;
+
+
+  // - validasi: panjang dan lebar harus >= 0
+  // - return panjang * lebar
 }
 
 // 2) isGenap(n)
 function isGenap(n) {
-  // TODO: validasi: harus number dan integer
-  // TODO: return true jika n genap
+  // TODO:
+  // - validasi: n harus number
+
+  if(typeof n != "number"){ throw new Error ('n harus berupa angka')}
+  if((n & 1)=== 0){ return true}else{return false}
+  // - return true jika genap, false jika ganjil
 }
 
 // 3) rataRata(arr)
 function rataRata(arr) {
-  // TODO: validasi: arr harus array dan tidak kosong
-  // TODO: validasi: semua elemen harus number
-  // TODO: hitung jumlah lalu bagi panjang
+  // TODO:
+  // - validasi: arr harus array
+  // - validasi: arr tidak boleh kosong
+  // - validasi: semua elemen harus number
+  // - hitung total, lalu return total / arr.length
 }
 
 const nilai = [80, 70, 90, 60];
 
-// TODO: cetak rata-rata
-// TODO: cetak nilai terbesar
-// TODO: cetak nilai terkecil
+// TODO: print rata-rata dari nilai (pakai function rataRata)
+// TODO: cari dan print nilai terbesar (pakai loop)
+// TODO: cari dan print nilai terkecil (pakai loop)
+
+// --- TEST MANUAL (boleh kamu tambah/ubah) ---
+console.log("Luas 5x2:", hitungLuasPersegiPanjang(5, 2));
+console.log("4 genap?:", isGenap(4));
+console.log("5 genap?:", isGenap(5));
 
 console.log("Selesai.");
