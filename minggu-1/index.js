@@ -28,11 +28,11 @@ function isGenap(n) {
   // TODO:
   // - validasi: n harus number
 
-  if(typeof n != "number"){
-    throw new Error ('n harus berupa angka');
+  if(typeof n !== "number"){
+    throw new Error('n harus berupa angka');
     }
 
-  if(n & 2 === 0){
+  if(n && 2 === 0){
     return true;
     }else{
     return false;
