@@ -24,10 +24,10 @@ function cariNilaiTertinggi(siswaList) {
     if (nilaiSiswaTertinggi < siswaList[i].nilai) {
       nilaiSiswaTertinggi = siswaList[i].nilai;
       indexList = i;
-      }
-
     }
-    return siswaList[indexList];
+  }
+
+  return siswaList[indexList];
 }
 
 function cariNilaiTerendah(siswaList) {
@@ -48,9 +48,8 @@ function cariNilaiTerendah(siswaList) {
       nilaiSiswaTerendah = siswaList[i].nilai;
       indexList = i;
       }
-
-    }
-    return siswaList[indexList];
+  }
+  return siswaList[indexList];
 }
 
 function rataRataNilai(siswaList){
