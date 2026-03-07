@@ -9,8 +9,16 @@ const siswaList = [
 // let nilaiSiswaTerendah = 0;
 
 function cariNilaiTertinggi(siswaList) {
+  if(!Array.isArray(siswaList)){
+    throw new Error("Harus berupa array");
+  }
+
+  if(siswaList.length === 0){
+    throw new Error("Array tidak boleh kosong");
+  }
+
   let indexList = 0;
-  let nilaiSiswaTertinggi = 0;
+  let nilaiSiswaTertinggi = siswaList[0].nilai;
 
   for (let i = 0; i < siswaList.length; i++) {
     if (nilaiSiswaTertinggi < siswaList[i].nilai) {
@@ -23,6 +31,15 @@ function cariNilaiTertinggi(siswaList) {
 }
 
 function cariNilaiTerendah(siswaList) {
+
+    if(!Array.isArray(siswaList)){
+    throw new Error("Harus berupa array");
+  }
+
+  if(siswaList.length === 0){
+    throw new Error("Array tidak boleh kosong");
+  }
+
   let indexList = 0;
   let nilaiSiswaTerendah = siswaList[0].nilai;
 
@@ -36,8 +53,28 @@ function cariNilaiTerendah(siswaList) {
     return siswaList[indexList];
 }
 
+function rataRataNilai(siswaList){
+    if(!Array.isArray(siswaList)){
+    throw new Error("Harus berupa array");
+  }
+
+  if(siswaList.length === 0){
+    throw new Error("Array tidak boleh kosong");
+  }
+
+  const jumlahNilai = siswaList.length;
+  let totalNilai = 0;
+
+  for(let i = 0; i < siswaList.length; i++){
+    totalNilai += siswaList[i].nilai;
+  }
+
+  return totalNilai / jumlahNilai;
+}
+
 console.log(cariNilaiTertinggi(siswaList));
 console.log(cariNilaiTerendah(siswaList));
+console.log(rataRataNilai(siswaList));
 
 // function cariNilaiTerendah(siswaList){
 //     for ( const x of siswaList.nilai ){
