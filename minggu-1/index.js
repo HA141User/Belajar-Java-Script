@@ -40,25 +40,26 @@ function isGenap(n) {
 function rataRata(arr) {
   // TODO:
   // - validasi: arr harus array
-    if(Array.isArray(arr)){
-        if(arr.length === 0){
-            throw new Error('array tidak boleh kosong');
-        }
+  if(!Array.isArray(arr)){
+    throw new Error("Bukan array")
+  }
+  if(arr.length === 0){
+      throw new Error('array tidak boleh kosong');
+  }
 
-        let total = 0;
+  let total = 0;
 
-        for(const x of arr){
-            if(typeof x !== "number" ){
-                throw new Error("isi array harus berupa angka");
-            }
+  for(const x of arr){
+      if(typeof x !== "number" ){
+          throw new Error("isi array harus berupa angka");
+      }
 
-            total = total + x;
-        }
+      total = total + x;
+  }
 
-        return total / arr.length;
-    }else{
-        throw new Error('Bukan berupa array');
-    }
+  return total / arr.length; 
+
+
 
   // - validasi: arr tidak boleh kosong
   // - validasi: semua elemen harus number
@@ -68,7 +69,7 @@ function rataRata(arr) {
 const nilai = [80, 70, 90, 60];
 
 // TODO: print rata-rata dari nilai (pakai function rataRata)
-console.log(rataRata(nilai));
+console.log("Rata rata: ", rataRata(nilai));
 
 let angkaTerbesar = nilai[0];
 let angkaTerkecil = nilai[0];
@@ -82,8 +83,8 @@ for(const i of nilai){
     }
 }
 
-console.log(`nilai terbesar adalah ${angkaTerbesar} dan nilai terkecil adalah ${angkaTerkecil}`);
-
+console.log("Angka Terbesar: ", angkaTerbesar);
+console.log("Angka terkecil: ", angkaTerkecil);
 
 // TODO: cari dan print nilai terbesar (pakai loop)
 // TODO: cari dan print nilai terkecil (pakai loop)
@@ -92,6 +93,4 @@ console.log(`nilai terbesar adalah ${angkaTerbesar} dan nilai terkecil adalah ${
 // console.log("Luas 5x2:", hitungLuasPersegiPanjang(5, 2));
 // console.log("4 genap?:", isGenap(4));
 // console.log("5 genap?:", isGenap(5));
-console.log(rataRata([1,2,3]))
-
 console.log("Selesai.");
