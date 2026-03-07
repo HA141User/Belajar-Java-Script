@@ -44,6 +44,26 @@ function isGenap(n) {
 function rataRata(arr) {
   // TODO:
   // - validasi: arr harus array
+    if(Array.isArray(arr)){
+        if(arr.length === 0){
+            throw new Error('array tidak boleh kosong');
+        }
+
+        let total = 0;
+
+        for(const x of arr){
+            if(typeof x !== "number" ){
+                throw new Error("isi array harus berupa angka");
+            }
+
+            total = total + x;
+        }
+        
+        return total / arr.length;
+    }else{
+        throw new Error('Bukan berupa array');
+    }
+
   // - validasi: arr tidak boleh kosong
   // - validasi: semua elemen harus number
   // - hitung total, lalu return total / arr.length
@@ -56,8 +76,9 @@ const nilai = [80, 70, 90, 60];
 // TODO: cari dan print nilai terkecil (pakai loop)
 
 // --- TEST MANUAL (boleh kamu tambah/ubah) ---
-console.log("Luas 5x2:", hitungLuasPersegiPanjang(5, 2));
-console.log("4 genap?:", isGenap(4));
-console.log("5 genap?:", isGenap(5));
+// console.log("Luas 5x2:", hitungLuasPersegiPanjang(5, 2));
+// console.log("4 genap?:", isGenap(4));
+// console.log("5 genap?:", isGenap(5));
+console.log(rataRata([1,2,3]))
 
 console.log("Selesai.");
