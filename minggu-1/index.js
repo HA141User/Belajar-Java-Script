@@ -32,11 +32,7 @@ function isGenap(n) {
     throw new Error('n harus berupa angka');
     }
 
-  if(n % 2 === 0){
-    return true;
-    }else{
-    return false;
-    }
+  return n % 2 === 0;
   // - return true jika genap, false jika ganjil
 }
 
@@ -58,7 +54,7 @@ function rataRata(arr) {
 
             total = total + x;
         }
-        
+
         return total / arr.length;
     }else{
         throw new Error('Bukan berupa array');
@@ -72,6 +68,23 @@ function rataRata(arr) {
 const nilai = [80, 70, 90, 60];
 
 // TODO: print rata-rata dari nilai (pakai function rataRata)
+console.log(rataRata(nilai));
+
+let angkaTerbesar = nilai[0];
+let angkaTerkecil = nilai[0];
+for(const i of nilai){
+    if ( i > angkaTerbesar){
+        angkaTerbesar = i;
+    }
+
+    if ( i < angkaTerkecil ){
+        angkaTerkecil = i;
+    }
+}
+
+console.log(`nilai terbesar adalah ${angkaTerbesar} dan nilai terkecil adalah ${angkaTerkecil}`);
+
+
 // TODO: cari dan print nilai terbesar (pakai loop)
 // TODO: cari dan print nilai terkecil (pakai loop)
 
