@@ -72,9 +72,13 @@ function rataRataNilai(siswaList){
   return totalNilai / jumlahNilai;
 }
 
-console.log(cariNilaiTertinggi(siswaList));
-console.log(cariNilaiTerendah(siswaList));
-console.log(rataRataNilai(siswaList));
+const tertinggi = cariNilaiTerendah(siswaList);
+const terendah = cariNilaiTerendah(siswaList);
+
+
+console.log(`Tertinggi : ${tertinggi.nama} (${tertinggi.nilai})`);
+console.log(`Terendah : ${terendah.nama} (${terendah.nilai})`);
+console.log("Rata rata",rataRataNilai(siswaList));
 
 // function cariNilaiTerendah(siswaList){
 //     for ( const x of siswaList.nilai ){
