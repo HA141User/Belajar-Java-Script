@@ -32,7 +32,7 @@ function isGenap(n) {
     throw new Error('n harus berupa angka');
     }
 
-  if(n && 2 === 0){
+  if(n % 2 === 0){
     return true;
     }else{
     return false;
