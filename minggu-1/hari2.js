@@ -72,7 +72,7 @@ function rataRataNilai(siswaList){
   return totalNilai / jumlahNilai;
 }
 
-const tertinggi = cariNilaiTerendah(siswaList);
+const tertinggi = cariNilaiTertinggi(siswaList);
 const terendah = cariNilaiTerendah(siswaList);
 
 
