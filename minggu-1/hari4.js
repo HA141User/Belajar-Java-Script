@@ -55,5 +55,5 @@ function ringkasanNilai(siswaList){
     return ringkasan;
 }
 
-console.log(ringkasanNilai(siswaList))
+console.log(ringkasanNilai(siswaList));
 
