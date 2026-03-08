@@ -7,7 +7,7 @@ const siswaList = [
 ];
 
 function ringkasanNilai(siswaList){
-    if(!Array.isArray){
+    if(!Array.isArray(siswaList)){
         throw new Error("Harus berupa list");
     }
 
