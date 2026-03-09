@@ -1,14 +1,8 @@
-const siswaList = [
-  { nama: "Arif", nilai: 80 },
-  { nama: "Budi", nilai: 85 },
-  { nama: "Cici", nilai: 95 },
-  { nama: "Dudung", nilai: 79 },
-  { nama: "Eka", nilai: 70 },
-];
+function rataRataDenganReduce(siswaList) {
+  // TODO validasi + reduce
 
-function ringkasanNilai(siswaList) {
   if (!Array.isArray(siswaList)) {
-    throw new Error("Harus berupa list");
+    throw new Error("Harus berupa Array");
   }
 
   if (siswaList.length === 0) {
@@ -16,9 +10,20 @@ function ringkasanNilai(siswaList) {
   }
 
   const total = siswaList.reduce((acc, s) => acc + s.nilai, 0);
-  const rataRataNilai = total / siswaList.length;
+  const rataRata = total / siswaList.length;
+  return rataRata;
+}
 
-  //Todo: Bagian mencari nilai tertinggi
+function ringkasanNilai(siswaList) {
+  // TODO validasi + return object ringkasan
+  if (!Array.isArray(siswaList)) {
+    throw new Error("Harus berupa Array");
+  }
+
+  if (siswaList.length === 0) {
+    throw new Error("Array tidak boleh kosong");
+  }
+
   let nilaiTertinggi = siswaList[0].nilai;
   let indexlistNilaiTertinggi = 0;
   for (let i = 0; i < siswaList.length; i++) {
@@ -43,7 +48,7 @@ function ringkasanNilai(siswaList) {
   const nilaiSiswaTerendah = siswaList[indexlistNilaiTerendah];
 
   const ringkasan = {
-    rataRata: rataRataNilai,
+    rataRata: rataRataDenganReduce(siswaList),
     tertinggi: {
       nama: nilaiSIswaTertinggi.nama,
       nilai: nilaiSIswaTertinggi.nilai,
@@ -57,4 +62,4 @@ function ringkasanNilai(siswaList) {
   return ringkasan;
 }
 
-console.log(ringkasanNilai(siswaList));
+module.exports = { rataRataDenganReduce, ringkasanNilai };
