@@ -28,7 +28,7 @@ function ringkasanNilai(siswaList) {
     }
   }
 
-  const nilaiSIswaTertinggi = siswaList[indexlistNilaiTertinggi];
+  const nilaiSiswaTertinggi = siswaList[indexlistNilaiTertinggi];
 
   // Todo : Bagian nilai terendah
   let nilaiTerendah = siswaList[0].nilai;
@@ -45,8 +45,8 @@ function ringkasanNilai(siswaList) {
   const ringkasan = {
     rataRata: rataRataNilai,
     tertinggi: {
-      nama: nilaiSIswaTertinggi.nama,
-      nilai: nilaiSIswaTertinggi.nilai,
+      nama: nilaiSiswaTertinggi.nama,
+      nilai: nilaiSiswaTertinggi.nilai,
     },
     terendah: {
       nama: nilaiSiswaTerendah.nama,

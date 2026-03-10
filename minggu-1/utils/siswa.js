@@ -68,8 +68,8 @@ function ringkasanNilai(siswaList) {
   const ringkasan = {
     rataRata: rataRataDenganReduce(siswaList),
     tertinggi: {
-      nama: nilaiSIswaTertinggi.nama,
-      nilai: nilaiSIswaTertinggi.nilai,
+      nama: nilaiSiswaTertinggi.nama,
+      nilai: nilaiSiswaTertinggi.nilai,
     },
     terendah: {
       nama: nilaiSiswaTerendah.nama,
