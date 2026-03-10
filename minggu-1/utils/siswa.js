@@ -1,28 +1,25 @@
-function validasiSiswaList(siswaList){
-  if(!Array.isArray(siswaList)){throw new Error("Harus berupa Array")}
-  if(siswaList.length === 0){throw new Error("Array tidak boleh kosong")}
+function validasiSiswaList(siswaList) {
+  if (!Array.isArray(siswaList)) {
+    throw new Error("Harus berupa Array");
+  }
+  if (siswaList.length === 0) {
+    throw new Error("Array tidak boleh kosong");
+  }
 
-  for(const s of siswaList){
-    if( typeof s !== "object" || s === null) throw new Error ("Setiap siswa haruslah object");
-    if(typeof s.nama !== "string") throw new Error ("nama siswa harus berupa string");
-    if(typeof s.nilai !== "number") throw new Error ("nilai harus berupa angka");
+  for (const s of siswaList) {
+    if (typeof s !== "object" || s === null)
+      throw new Error("Setiap siswa haruslah object");
+    if (typeof s.nama !== "string" || s.nama.trim() === "")
+      throw new Error("nama siswa harus berupa string dan tidak boleh kosong");
+    if (typeof s.nilai !== "number")
+      throw new Error("nilai harus berupa angka");
   }
 }
-
-
-
-
 
 function rataRataDenganReduce(siswaList) {
   // TODO validasi + reduce
 
-  if (!Array.isArray(siswaList)) {
-    throw new Error("Harus berupa Array");
-  }
-
-  if (siswaList.length === 0) {
-    throw new Error("Array tidak boleh kosong");
-  }
+  validasiSiswaList(siswaList);
 
   const total = siswaList.reduce((acc, s) => acc + s.nilai, 0);
   const rataRata = total / siswaList.length;
@@ -42,12 +39,11 @@ function ringkasanNilai(siswaList) {
   //   }
   // }
 
-
   // const nilaiSIswaTertinggi = siswaList[indexlistNilaiTertinggi];
 
-    const nilaiSiswaTertinggi = siswaList.reduce((acc, s)=>{
-      return acc.nilai < s.nilai ? s : acc;
-    }, siswaList[0])
+  const nilaiSiswaTertinggi = siswaList.reduce((acc, s) => {
+    return acc.nilai < s.nilai ? s : acc;
+  }, siswaList[0]);
 
   // Todo : Bagian nilai terendah
   // let nilaiTerendah = siswaList[0].nilai;
@@ -61,9 +57,9 @@ function ringkasanNilai(siswaList) {
 
   // const nilaiSiswaTerendah = siswaList[indexlistNilaiTerendah];
 
-  const nilaiSiswaTerendah = siswaList.reduce((acc, s) =>{
+  const nilaiSiswaTerendah = siswaList.reduce((acc, s) => {
     return acc.nilai < s.nilai ? acc : s;
-  },siswaList[0])
+  }, siswaList[0]);
 
   const ringkasan = {
     rataRata: rataRataDenganReduce(siswaList),
