@@ -1,0 +1,47 @@
+/**
+ * =========================
+ * HARI 7 — MANUAL TESTING (TRY/CATCH)
+ * =========================
+ *
+ * TODO A — Persiapan file & path
+ * [ ] Tentukan file runner ini mau ditaruh di mana:
+ *     - Opsi 1: minggu-1/hari7.js (file ini)
+ *     - Opsi 2: minggu-1/hari_07_manual-testing-try-catch/index.js
+ * [ ] Pastikan path require ke utils benar dari lokasi file ini.
+ * [ ] (Opsional) require data siswa valid dari ./data/siswa untuk test "OK".
+ *
+ * TODO B — Helper test runner
+ * [ ] Buat function runTest(namaTest, fn)
+ *     - pakai try/catch
+ *     - kalau sukses: console.log(`${namaTest}: OK`)
+ *     - kalau error: console.log(`${namaTest}: ERROR -> ${err.message}`)
+ *
+ * TODO C — Siapkan data test (minimal 6 kasus)
+ * [ ] 1 data VALID (harus lolos validasi)
+ * [ ] 5 data TIDAK VALID (wajib):
+ *     [ ] (1) bukan array (mis. string / object)
+ *     [ ] (2) array kosong []
+ *     [ ] (3) ada item nama: "" (string kosong)
+ *     [ ] (4) ada item nama: "   " (spasi doang)
+ *     [ ] (5) ada item nilai bukan number (mis. "90")
+ *
+ * TODO D — Jalankan test untuk 2 fungsi
+ * [ ] Untuk setiap test case, panggil:
+ *     [ ] rataRataDenganReduce(testData)
+ *     [ ] ringkasanNilai(testData)
+ * [ ] Beri label test yang jelas (mis. "TEST 1A rata-rata (bukan array)")
+ *
+ * TODO E — Verifikasi output
+ * [ ] 5 test invalid: harus tampil ERROR (program tidak berhenti di tengah)
+ * [ ] 1 test valid: harus tampil OK (atau tampil hasil perhitungan)
+ *
+ * TODO F — Rapikan & push
+ * [ ] Rapikan urutan output biar enak dibaca
+ * [ ] Commit: "Hari 7: manual testing try/catch"
+ * [ ] Push
+ *
+ * TODO G — Submit
+ * [ ] Balas ke guru: "Hari 7 done"
+ */
+
+

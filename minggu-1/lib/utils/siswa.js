@@ -76,4 +76,4 @@ function ringkasanNilai(siswaList) {
   return ringkasan;
 }
 
-module.exports = { rataRataDenganReduce, ringkasanNilai };
+module.exports = { rataRataDenganReduce, ringkasanNilai , validasiSiswaList };
