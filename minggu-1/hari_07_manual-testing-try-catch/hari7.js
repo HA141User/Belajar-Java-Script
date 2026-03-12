@@ -14,6 +14,13 @@ function runTest(namaTest, fn){
 runTest("validasi siswa list", ()=> validasiSiswaList(siswaList));
 // runTest("validasi siswa list", validasiSiswaList(siswaList));
 
+runTest("Tes invalid No array", ()=>{
+    ringkasanNilai(siswaFakeList);
+})
+runTest("Tes invalid No array", ()=>{
+    rataRataDenganReduce(siswaFakeList);
+})
+
 
 // todo c : test data rusak
 runTest("Testing validasi menggunakan data Rusak", ()=>{
