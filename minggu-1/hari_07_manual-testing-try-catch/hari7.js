@@ -23,19 +23,19 @@ runTest("Tes invalid No array", ()=>{
 
 
 // todo c : test data rusak
-runTest("Testing validasi menggunakan data Rusak", ()=>{
+runTest("Testing validasi menggunakan data Bukan Array", ()=>{
     validasiSiswaList(siswaFakeList);
 })
-runTest("Testing validasi menggunakan data Rusak", ()=>{
+runTest("Testing validasi menggunakan data siswa kosong", ()=>{
     validasiSiswaList(siswaKosong);
 })
-runTest("Testing validasi menggunakan data Rusak", ()=>{
+runTest("Testing validasi menggunakan data nama siswa kosong", ()=>{
     validasiSiswaList(siswaNameNone);
 })
-runTest("Testing validasi menggunakan data Rusak", ()=>{
+runTest("Testing validasi menggunakan data nama siswa berupa spasi", ()=>{
     validasiSiswaList(siswaSpaceName);
 })
-runTest("Testing validasi menggunakan data Rusak", ()=>{
+runTest("Testing validasi menggunakan data nilai siswa bukan angka", ()=>{
     validasiSiswaList(siswaNotNumber);
 })
 
