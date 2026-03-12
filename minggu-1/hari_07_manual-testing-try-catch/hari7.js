@@ -39,3 +39,22 @@ runTest("Testing validasi menggunakan data nilai siswa bukan angka", ()=>{
     validasiSiswaList(siswaNotNumber);
 })
 
+
+// todo : helper running two test function
+
+function runTwoTest(label, dataInput){
+    runTest(label, ()=>{
+        ringkasanNilai(dataInput);
+    
+    })
+    runTest(label, ()=>{
+        rataRataDenganReduce(dataInput);
+    })
+}
+
+runTwoTest("test data valid", siswaList);
+runTwoTest("test array kosong", siswaFakeList);
+runTwoTest("test data siswa kosong", siswaKosong);
+runTwoTest("test nama siswa kosong", siswaNameNone);
+runTwoTest("test nama siswa berupa spasi", siswaSpaceName);
+runTwoTest("test nilai siswa bukan angka", siswaNotNumber);
