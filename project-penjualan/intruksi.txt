@@ -1,0 +1,120 @@
+=========================================
+PEKAN 1 MINI PROJECT — RINGKASAN PENJUALAN
+=========================================
+
+Tujuan:
+- Latihan modular CommonJS (require/module.exports)
+- Latihan validasi input (throw Error)
+- Latihan map/filter/reduce
+- Latihan manual testing pakai try/catch (tanpa library test)
+
+Struktur folder yang ditargetkan:
+minggu-1/project-penjualan/
+  index.js
+  lib/
+    data/
+      transaksi.js
+      transaksiRusak.js
+    utils/
+      transaksi.js
+
+-----------------------------------------
+TODO A — Persiapan File & Import
+-----------------------------------------
+[ ] Buat folder: minggu-1/project-penjualan/
+[ ] Buat file:
+    [ ] index.js
+    [ ] lib/utils/transaksi.js
+[ ] Pastikan file data sudah ada:
+    [ ] lib/data/transaksi.js (VALID)
+    [ ] lib/data/transaksiRusak.js (INVALID)
+[ ] Pastikan semua path require benar dari index.js:
+    - ../project-penjualan/lib/data/transaksi
+    - ../project-penjualan/lib/data/transaksiRusak
+    - ../project-penjualan/lib/utils/transaksi
+
+-----------------------------------------
+TODO B — Implement Utils (lib/utils/transaksi.js)
+-----------------------------------------
+B1) validasiTransaksiList(list)
+[ ] Kalau list bukan array -> throw Error
+[ ] Kalau list array kosong -> throw Error
+[ ] Loop tiap item:
+    [ ] item harus object dan tidak null
+    [ ] id: string, trim() tidak kosong
+    [ ] namaProduk: string, trim() tidak kosong
+    [ ] qty: number, qty > 0
+    [ ] harga: number, harga >= 0
+
+B2) totalPendapatan(list)
+[ ] Panggil validasiTransaksiList(list)
+[ ] Hitung total: sum(qty * harga) menggunakan reduce
+[ ] Return number total
+
+B3) ringkasanPenjualan(list)
+[ ] Panggil validasiTransaksiList(list)
+[ ] Hitung:
+    [ ] totalPendapatan (gunakan totalPendapatan(list))
+    [ ] totalQty (sum qty)
+    [ ] jumlahTransaksi (list.length)
+    [ ] produkTerlaris:
+        - kelompokkan qty per namaProduk
+        - ambil yang qty total paling besar
+        - return object: { namaProduk, totalQty }
+[ ] Return object ringkasan
+
+B4) Export
+[ ] module.exports = { validasiTransaksiList, totalPendapatan, ringkasanPenjualan }
+
+-----------------------------------------
+TODO C — Manual Test Runner (index.js)
+-----------------------------------------
+C1) Buat helper runTest(namaTest, fn)
+[ ] try { fn(); console.log(`${namaTest}: OK`) }
+[ ] catch (err) { console.log(`${namaTest}: ERROR -> ${err.message}`) }
+
+C2) Buat helper runTwoTest(labelCase, dataInput)
+[ ] runTest(`${labelCase} | ringkasan`, () => ringkasanPenjualan(dataInput))
+[ ] runTest(`${labelCase} | total`, () => totalPendapatan(dataInput))
+
+C3) Jalankan test case minimal
+[ ] 1 case VALID (harus OK untuk dua fungsi):
+    - transaksiList
+[ ] Minimal 5 case INVALID (harus ERROR dan program lanjut):
+    - bukanArray
+    - arrayKosong
+    - adaItemBukanObject
+    - idKosong
+    - namaProdukSpasi
+    - qtyBukanNumber
+    - qtyNol
+    - hargaNegatif
+  (pilih minimal 5 dari list di atas)
+
+-----------------------------------------
+TODO D — Eksekusi & Verifikasi Output
+-----------------------------------------
+[ ] Jalankan:
+    node minggu-1/project-penjualan/index.js
+[ ] Pastikan output:
+    - Case valid: OK untuk ringkasan + total
+    - Case invalid: ERROR untuk ringkasan + total
+    - Tidak berhenti di tengah (try/catch jalan)
+
+-----------------------------------------
+TODO E — Rapikan & Push
+-----------------------------------------
+[ ] Rapikan label test supaya jelas dan unik
+[ ] Commit message disarankan:
+    "Pekan 1: mini project ringkasan penjualan"
+[ ] Push ke branch main
+
+-----------------------------------------
+DONE CHECKLIST
+-----------------------------------------
+[ ] Semua file sesuai struktur
+[ ] Import path benar
+[ ] Validasi throw Error sesuai kasus
+[ ] totalPendapatan dan ringkasanPenjualan berjalan
+[ ] Manual tests lengkap (1 valid + >=5 invalid)
+[ ] Output rapi dan mudah dibaca
